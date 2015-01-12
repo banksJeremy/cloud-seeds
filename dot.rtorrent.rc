@@ -1,0 +1,29 @@
+# XXX: rTorrent may not announce itself to the DHT.
+
+session = /home/ubuntu/torrent-session
+directory = /home/ubuntu/torrent-data
+
+# Be supportive.
+dht = on
+peer_exchange = yes
+use_trackers = yes
+use_udp_trackers = yes
+
+# Data integrity is essential.
+check_hash = yes
+pieces.sync.always_safe = yes
+
+# Download as fast as possible.
+download_rate = 0
+# Limit to ~500GB of upload per month.
+upload_rate = 192
+
+# Save session data every five minutes.
+schedule = session_save,240,300,session_save=
+
+# Prefer encryption.
+encryption = try_outgoing,enable_retry
+
+# Allow all torrents to be active simultaneously.
+max_downloads_global = 0
+max_uploads_global = 0
